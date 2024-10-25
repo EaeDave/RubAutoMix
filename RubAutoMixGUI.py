@@ -59,7 +59,7 @@ def iniciar():
         time.sleep(1)
 
         # Clica em "Filtro"
-        navegador.find_element(By.CLASS_NAME, 'btn-text').click()
+        navegador.find_element(By.ID, 'master-vbtn-optionsdialogopenbutton').click()
 
         # Seleciona o "Adicionar Filtro" & "Fornecedor"
         select_element = navegador.find_element(By.TAG_NAME, 'select')
@@ -94,7 +94,7 @@ def iniciar():
         time.sleep(1)
 
         # Clica em "Aplicar"
-        navegador.find_element(By.XPATH, '//*[@id="mainview"]/div[2]/div[2]/a/span').click()
+        navegador.find_element(By.CLASS_NAME, 'btnApply').click()
 
         # Espera x segundos para que a página carregue toda
         time.sleep(1.5)
@@ -121,14 +121,14 @@ def iniciar2():
     
     if chamou_fechar_pagina:
         fechar_pagina()
-        navegador.find_element(By.CLASS_NAME, 'btn-text').click()  # Clica em "Filtro"
+        navegador.find_element(By.ID, 'master-vbtn-optionsdialogopenbutton').click() # Clica em "Filtro"
 
         # O código abaixo ele "Limpa" o Input de Fornecedor e logo depois insere o novo código
         navegador.find_element(By.CSS_SELECTOR, 'input[placeholder="Valor"]').clear()
         navegador.find_element(By.CSS_SELECTOR, 'input[placeholder="Valor"]').send_keys(fornecedor.strip())
 
         # Aplicar
-        navegador.find_element(By.XPATH, '//*[@id="mainview"]/div[2]/div[2]/a/span').click()
+        navegador.find_element(By.CLASS_NAME, 'btnApply').click()
 
         # Espera x segundos para que a página carregue toda
         time.sleep(1)
@@ -156,7 +156,7 @@ def iniciar2():
         navegador.find_element(By.CSS_SELECTOR, 'input[placeholder="Valor"]').send_keys(fornecedor.strip())
 
         # Aplicar
-        navegador.find_element(By.XPATH, '//*[@id="mainview"]/div[2]/div[2]/a/span').click()
+        navegador.find_element(By.CLASS_NAME, 'btnApply').click()
 
         # Espera x segundos para que a página carregue toda
         time.sleep(1)
